@@ -1,0 +1,46 @@
+  <meta charset="UTF-8">
+  <title>Analitis Visual Okupansi Halte dan Pergerakan Penumpan Transjakarta</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v1.5.0/mapbox-gl.css' rel='stylesheet' />
+  <script src='https://code.jquery.com/jquery-1.10.2.js'></script>
+  <script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+
+  <style>
+    #container {
+      position: absolute
+      background-color: black;
+    }
+    #tableauViz {
+        background-color: black;
+        width: 1366px;
+        height: 750px;
+    }
+
+  </style>
+</head>
+<body>
+<div class="container">
+    <div id="tableauViz"></div>
+</div>
+<script>
+
+  var options = {
+    // Show the tabs
+    width: "100%", //width: placeholderDiv.offsetWidth,
+    height: "100%",
+    hideTabs: true,
+    // Aync so supply callback for when viz is fully rendered
+    onFirstInteractive: function() {
+      workbook = viz.getWorkbook();
+    }
+  }
+var url = "https://public.tableau.com/views/ODNEW/Dash_Viz2";
+// Create a View
+var placeholderDiv = document.getElementById("tableauViz");
+viz = new tableau.Viz(placeholderDiv, url, options);
+
+</script>
+
+</body>
+</html>
